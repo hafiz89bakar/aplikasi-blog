@@ -2,24 +2,45 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-xl mx-auto bg-white rounded-lg shadow p-8">
-    <h2 class="text-2xl font-bold mb-4 text-blue-700">Hubungi Kami</h2>
-    <p class="text-gray-600 mb-6">
-        Ada pertanyaan, cadangan, atau ingin berkongsi artikel? Sila isi borang di bawah atau email kami di <a href="mailto:admin@aplikasiblog.com" class="text-blue-600 hover:underline">admin@aplikasiblog.com</a>.
-    </p>
-    <form method="POST" action="#">
-        @csrf
-        <div class="mb-4">
-            <label class="block text-gray-700 mb-2" for="nama">Nama</label>
-            <input type="text" id="nama" name="nama" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200" required>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-body p-4">
+                    <h2 class="h4 fw-bold mb-3 text-primary">Hubungi Kami</h2>
+                    <p class="text-muted mb-4">
+                        Ada pertanyaan, cadangan, atau ingin berkongsi artikel?
+                        Sila isi borang di bawah atau email kami di
+                        <a href="mailto:admin@aplikasiblog.com" class="text-decoration-none text-primary fw-semibold">
+                            admin@aplikasiblog.com
+                        </a>.
+                    </p>
+
+                    <form method="POST" action="#">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mesej" class="form-label">Mesej</label>
+                            <textarea class="form-control" id="mesej" name="mesej" rows="4" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i class="fas fa-paper-plane me-2"></i> Hantar
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 mb-2" for="email">Email</label>
-            <input type="email" id="email" name="email" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200" required>
-        </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 mb-2" for="mesej">Mesej</label>
-            <textarea id="mesej" name="mesej" rows="4" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200" required></textarea>
-        </div>
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Hantar</button>
+    </div>
+</div>
 @endsection
+

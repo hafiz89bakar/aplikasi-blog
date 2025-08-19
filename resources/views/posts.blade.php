@@ -14,7 +14,7 @@
         <img src="{{  $post->image }}" alt="Gambar Post" class="rounded mb-4 w-full h-40 object-cover">
         <h2 class="text-xl font-semibold mb-2">{{ $post->title}}</h2>
         <p class="text-gray-600 mb-4">{{ $post->content }}</p>
-        <a href="#" class="text-blue-600 hover:underline">Baca Selanjutnya</a>
+        <a href="{{ route('posts.show', $post->id) }}" class="text-blue-600 hover:underline">Baca Selanjutnya</a>
     </div>
     @endforeach
 
